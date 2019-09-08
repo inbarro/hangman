@@ -1,26 +1,25 @@
 import {Injectable, OnInit} from "@angular/core";
-import {letterUpService} from "./letterUp.service";
-import {letterDownService} from "./letterDown.service";
+import {letterDownModel} from "./letterDown.model";
+import {letterUpModel} from "./letterUp.model";
 
 
 @Injectable()
 export class lettersService implements OnInit {
   movieArr: string[];
-  letterUp: Array<letterUpService>;
-  lettersDown: Array<letterDownService>;
+  lettersUp: Array<letterUpModel>;
+  lettersDown: Array<letterDownModel>;
 
   constructor() {
 
   }
 
   ngOnInit() {
-
   }
 
-  initLetterService(movieSentence: string[]) {
+    initLetterService(movieSentence: string[]) {
     this.movieArr = movieSentence;
-    this.letterUp = new Array<letterUpService>();
-    this.lettersDown = new Array<letterDownService>();
+    this.lettersUp = new Array<letterUpModel>();
+    this.lettersDown = new Array<letterDownModel>();
     let chosenLetters = this.choose25percent();
     this.initUpletters(chosenLetters);
     this.initDownletters(chosenLetters);
@@ -29,24 +28,24 @@ export class lettersService implements OnInit {
   initUpletters(chosenLetters: string[]) {
     for (let letter of this.movieArr) {
       if (letter === " ") {
-        this.letterUp.push(new letterUpService("space", letter))
+        this.lettersUp.push(new letterUpModel("space", letter))
       } else if (!(chosenLetters.includes(letter))) {
-        this.letterUp.push(new letterUpService("empty", letter))
+        this.lettersUp.push(new letterUpModel("empty", letter))
       } else {
-        this.letterUp.push(new letterUpService("randomed", letter))
+        this.lettersUp.push(new letterUpModel("randomed", letter))
       }
     }
     console.log("lettersUp: ");
-    console.log(this.letterUp);
+    console.log(this.lettersUp);
   }
 
   initDownletters(chosenLetters){
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     for (var i = 0; i < alphabet.length; i++){
        if (!(chosenLetters.includes(alphabet[i]))) {
-      this.lettersDown.push(new letterUpService("B", alphabet[i]))
+      this.lettersDown.push(new letterDownModel("B", alphabet[i]))
     } else {
-      this.lettersDown.push(new letterUpService("G", alphabet[i]))
+      this.lettersDown.push(new letterDownModel("G", alphabet[i]))
     }
   }
     console.log("lettersDown: ");
