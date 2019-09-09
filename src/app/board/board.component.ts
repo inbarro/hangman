@@ -17,7 +17,6 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("in initLetterService function")
 
     this.initBoard();
   }
@@ -32,16 +31,8 @@ export class BoardComponent implements OnInit {
   }
 
   randomSentence(){    //TODO
-    let movie = "SHIN CHEN"
+    let movie = "SHIN CHEN";
     return movie.split("");
   }
-  // initLetters(){
-  //
-  // }
-  //
-  // choseSentence(){
-  //   //read from assets return sentence
-  //   return String[];
-  // }
 
 }

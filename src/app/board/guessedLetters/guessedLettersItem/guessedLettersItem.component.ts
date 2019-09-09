@@ -5,7 +5,7 @@ import {lettersService} from "../../../letters.service";
 @Component({
   selector: 'app-guessedLettersItem',
   templateUrl: './guessedLettersItem.component.html',
-  styleUrls: ['./guessedLettersItem.component.css']
+  styleUrls: ['./guessedLettersItem.component.css'],
 })
 export class GuessedLettersItemComponent implements OnInit {
 

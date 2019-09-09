@@ -16,7 +16,7 @@ export class lettersService implements OnInit {
   ngOnInit() {
   }
 
-    initLetterService(movieSentence: string[]) {
+  initLetterService(movieSentence: string[]) {
     this.movieArr = movieSentence;
     this.lettersUp = new Array<letterUpModel>();
     this.lettersDown = new Array<letterDownModel>();
@@ -40,12 +40,12 @@ export class lettersService implements OnInit {
   initDownletters(chosenLetters){
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     for (var i = 0; i < alphabet.length; i++){
-       if (!(chosenLetters.includes(alphabet[i]))) {
-      this.lettersDown.push(new letterDownModel("B", alphabet[i]))
-    } else {
-      this.lettersDown.push(new letterDownModel("G", alphabet[i]))
+      if (!(chosenLetters.includes(alphabet[i]))) {
+        this.lettersDown.push(new letterDownModel("B", alphabet[i]))
+      } else {
+        this.lettersDown.push(new letterDownModel("G", alphabet[i]))
+      }
     }
-  }
     console.log("lettersDown: ");
     console.log(this.lettersDown);
   }

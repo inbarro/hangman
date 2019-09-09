@@ -24,7 +24,9 @@ export class HangmanImageComponent implements OnInit, OnDestroy{
     this.minusLifeSub =  this.gameStateService.minusLife.subscribe((lives :number ) => {
       console.log(lives);
       this.lives = lives;
-      this.src ="./assets/hangmanImages/Hangman " +  this.lives + ".png";
+      if (this.lives > 0) {
+        this.src = "./assets/hangmanImages/Hangman " + this.lives + ".png";
+      }
 
       // this.minusLife.emit(lives);
     })

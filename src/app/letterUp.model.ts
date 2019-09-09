@@ -22,9 +22,17 @@ export class letterUpModel {
       return 'blue';
     } else if (this.type === "chosen") {
       return 'black';
-    } else {
+    } else if (this.type === "space") {
       return 'transparent';
     }
+    else{
+      return "transparent";
+    }
+  }
+
+  setType(type: string){
+    this.type = type;
+
   }
 
   getLineImageSource() {

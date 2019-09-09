@@ -3,7 +3,7 @@
     <!--<a class="list-group-item-heading">{{ lettersListItem.type }}</a>-->
     <!--<a class="list-group-item-text">{{ lettersListItem.data }}</a>-->
 <!--</div>-->
-        <img (click) = "gameStateService.checkLetter()"
+        <img (click) = "gameStateService.checkLetter(letterItem)"
           [src]="letterItem.getImage()"
           class="img-responsive"
           style="max-height: 50px;">

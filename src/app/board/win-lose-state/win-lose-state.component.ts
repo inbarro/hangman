@@ -10,8 +10,8 @@ import { gameStateService } from '../../gameState.service';
 export class WinLoseStateComponent implements OnInit, OnDestroy {
 
   lives: number;
+  wunOrLose: number;
   private minusLifeSub:Subscription;
-  minusLife = new EventEmitter<number>();
 
   constructor(private gameStateService:gameStateService) { }
 

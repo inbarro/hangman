@@ -11,5 +11,6 @@
 <!--</span>-->
 <!--</span>-->
 
-<span   [ngStyle]="{'color': letterItem.getColor()}" > {{ letterItem.getLetter()}}
+<span  [ngStyle]="{'color': letterItem.getColor()}" > {{ letterItem.getLetter()}}
+  <span *ngIf = "letterItem.getType()==='space'"> space </span>
 </span>
