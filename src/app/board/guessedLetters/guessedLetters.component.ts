@@ -15,8 +15,6 @@ export class GuessedLettersComponent implements OnInit {
 
   constructor(private lettersService:lettersService) {}
 
-
-
   ngOnInit() {
     this.lettersUp = this.lettersService.lettersUp;
   }

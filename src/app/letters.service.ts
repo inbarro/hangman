@@ -35,8 +35,6 @@ export class lettersService implements OnInit {
         this.lettersUp.push(new letterUpModel("randomed", letter))
       }
     }
-    console.log("lettersUp: ");
-    console.log(this.lettersUp);
   }
 
   initDownletters(chosenLetters){
@@ -55,7 +53,6 @@ export class lettersService implements OnInit {
   choose25percent(){ //TODO
     return ["S", "H"];
   }
-
 
   getRundom() {
 

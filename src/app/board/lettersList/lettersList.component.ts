@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { lettersService } from '../../letters.service'
 import {letterDownModel} from "../../letterDown.model";
+import { gameStateService} from"../../gameState.service";
 
 
 @Component({
@@ -13,7 +14,7 @@ export class LettersListComponent implements OnInit {
   lettersDown: letterDownModel[];
 
 
-  constructor(private lettersService:lettersService) { }
+  constructor(private lettersService:lettersService, private gameStateService:gameStateService) { }
 
   ngOnInit() {
     this.lettersDown = this.lettersService.lettersDown;

@@ -7,12 +7,13 @@ import { LettersListComponent } from './board/lettersList/lettersList.component'
 import { GuessedLettersComponent } from './board/guessedLetters/guessedLetters.component';
 import { RemainLettersStateComponent } from './remain-letters-state/remain-letters-state.component';
 import { WinLoseStateComponent } from './board/win-lose-state/win-lose-state.component';
-import {lettersService} from "./letters.service";
-import {imageStateService} from "./imageState.service";
-import {winLoseService} from "./winLose.service";
-import {letterDownModel} from "./letterDown.model";
-import {letterUpModel} from "./letterUp.model";
-import {LettersListItemComponent} from "./board/lettersList/lettersListItem/lettersListItem.component"
+import { LettersListItemComponent } from "./board/lettersList/lettersListItem/lettersListItem.component";
+import { GuessedLettersItemComponent } from "./board/guessedLetters/guessedLettersItem/guessedLettersItem.component";
+import { HangmanImageComponent } from './board/hangmanImage/hangmanImage.component';
+import { gameStateService } from './gameState.service';
+import { lettersService } from "./letters.service";
+import { letterDownModel } from "./letterDown.model";
+import { letterUpModel } from "./letterUp.model";
 
 
 @NgModule({
@@ -23,12 +24,14 @@ import {LettersListItemComponent} from "./board/lettersList/lettersListItem/lett
     RemainLettersStateComponent,
     WinLoseStateComponent,
     LettersListItemComponent,
-    LettersListComponent
+    LettersListComponent,
+    GuessedLettersItemComponent,
+    HangmanImageComponent,
   ],
   imports: [
     BrowserModule
   ],
-  providers: [lettersService, imageStateService, winLoseService, letterDownModel,letterUpModel],
+  providers: [lettersService, letterDownModel, letterUpModel, gameStateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

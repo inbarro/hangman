@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { lettersService } from '../letters.service';
-import { imageStateService } from '../imageState.service';
-import { winLoseService } from '../winLose.service';
+import { gameStateService } from '../gameState.service';
 
 
 
@@ -13,7 +12,7 @@ import { winLoseService } from '../winLose.service';
 export class BoardComponent implements OnInit {
   currentMovie :string[];
 
-  constructor( private letterService: lettersService, private imageStateService: imageStateService, private winLoseService: winLoseService) {
+  constructor( private letterService: lettersService, private gameStateService:gameStateService) {
 
   }
 
