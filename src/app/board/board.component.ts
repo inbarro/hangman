@@ -11,9 +11,10 @@ import { gameStateService } from '../gameState.service';
 })
 export class BoardComponent implements OnInit {
   currentMovie :string[];
+  hangmanlogoImgSource: string;
 
   constructor( private letterService: lettersService, private gameStateService:gameStateService) {
-
+    this.hangmanlogoImgSource  = "./assets/hangmanLogo.jpeg"
   }
 
   ngOnInit() {

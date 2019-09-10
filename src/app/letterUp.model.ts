@@ -38,7 +38,7 @@ export class letterUpModel {
   getLineImageSource() {
     if (this.type === "randomed") {
       return "./assets/RectangleBlue.png";
-    } else if (this.type === "chosen") {
+    } else if (this.type === "chosen" || this.type === "empty") {
       return "./assets/RectangleBlack.png";
     }
   }

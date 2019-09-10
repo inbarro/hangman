@@ -11,14 +11,19 @@ import {letterUpModel} from "../../letterUp.model";
 export class GuessedLettersComponent implements OnInit {
 
   lettersUp: letterUpModel[];
+  allWordsArray: Array<letterUpModel[]>;
 
 
-  constructor(private lettersService:lettersService) {}
+  constructor(private lettersService: lettersService) {
+  }
 
   ngOnInit() {
     this.lettersUp = this.lettersService.lettersUp;
-    }
+    // this.initAllWordsArray();
   }
 
-
+  // initAllWordsArray() {
+  //   let currArr = letterUpModel[];
+  // }
+}
 

@@ -1,16 +1,19 @@
-<!--<span>-->
-<!--<span class = "row"  [ngStyle]="{'color': letterItem.getColor()}"  >-->
-
-  <!--{{ letterItem.getLetter() }}-->
-
-<!--</span>-->
-<!--<span>-->
- <!--<div *ngIf= letterItem.isBlueOrBlack()>-->
-  <!--<img [src] = "letterItem.getLineImageSource()">-->
- <!--</div>-->
-<!--</span>-->
-<!--</span>-->
-
-<span  [ngStyle]="{'color': letterItem.getColor()}" > {{ letterItem.getLetter()}}
+<div class="container">
+<div
+  class = "row"
+  style="font-size: 4vw"
+  [ngStyle]="{'color': letterItem.getColor()}"
+  >
+    {{ letterItem.getLetter()}}
   <span *ngIf = "letterItem.getType()==='space'"> space </span>
-</span>
+</div>
+
+<div class = "row">
+  <img
+    *ngIf = "letterItem.getType() !='space'"
+  [ngStyle] = "{'max-width':'100%'}"
+  [src] = "letterItem.getLineImageSource()"
+  />
+</div>
+
+</div>

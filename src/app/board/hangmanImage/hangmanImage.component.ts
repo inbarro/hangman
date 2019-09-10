@@ -10,25 +10,21 @@ export class HangmanImageComponent implements OnInit, OnDestroy{
 
   lives: number;
   private minusLifeSub:Subscription;
-  // minusLife = new EventEmitter<number>();
   src: string;
 
 
   constructor(private gameStateService:gameStateService) {
-    this.lives = 7;
-    this.src ="./assets/hangmanImages/Hangman 7.png";
+    this.lives = gameStateService.lives;
+    this.src ="./assets/hangmanImages/Hangman "+ (this.lives +1 )+".png";
   }
 
   ngOnInit() {
     console.log("oninit");
     this.minusLifeSub =  this.gameStateService.minusLife.subscribe((lives :number ) => {
-      console.log(lives);
       this.lives = lives;
-      if (this.lives > 0) {
-        this.src = "./assets/hangmanImages/Hangman " + this.lives + ".png";
+      if (this.lives >= 0) {
+        this.src = "./assets/hangmanImages/Hangman " + (this.lives+1) + ".png";
       }
-
-      // this.minusLife.emit(lives);
     })
   }
 

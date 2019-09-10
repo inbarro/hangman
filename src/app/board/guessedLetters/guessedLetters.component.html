@@ -1,9 +1,8 @@
 
 <div class="row">
-  <app-guessedLettersItem class = "col-sm"
+  <app-guessedLettersItem class = "col-1 " [ngStyle] = "{'margin': '1%'}"
                        *ngFor="let letter of lettersUp"
                        [letterItem]="letter">
-
 
   </app-guessedLettersItem>
 </div>

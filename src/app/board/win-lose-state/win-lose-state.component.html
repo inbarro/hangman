@@ -1,1 +1,7 @@
-<p>win-lose-state works!</p>
+<div class = container [ngStyle] = "{'margin-top':'95%'}">
+  <img *ngIf = "winOrLose==='win'" [src] = "winImgSrc" [ngStyle] = "{'max-width': '100%'}"/>
+</div>
+<div class = container [ngStyle] = "{'margin-top':'50%'}">
+<img *ngIf = "winOrLose==='lose'" [src] = "loseImgSrc" [ngStyle] =  "{'max-width': '100%'}"/>
+</div>
+

@@ -9,21 +9,25 @@ import { gameStateService } from '../../gameState.service';
 })
 export class WinLoseStateComponent implements OnInit, OnDestroy {
 
-  lives: number;
-  wunOrLose: number;
-  private minusLifeSub:Subscription;
+  private winOrLose;
+  private winLoseSub:Subscription;
+  private winImgSrc;
+  private loseImgSrc;
 
-  constructor(private gameStateService:gameStateService) { }
+  constructor(private gameStateService:gameStateService) {
+    this.winOrLose = "stillPlaying";
+    this.winImgSrc = "./assets/winLose/yes_symbol.png";
+    this.loseImgSrc = "./assets/winLose/shit_symbol.png";
+  }
 
   ngOnInit() {
-    this.minusLifeSub =  this.gameStateService.minusLife.subscribe((lives :number ) => {
-      this.minusLife.emit(lives);
-      this.lives = lives;
+    this.winLoseSub =  this.gameStateService.winLoseSubject.subscribe((state :string ) => {
+      this.winOrLose = state;
     })
   }
 
   ngOnDestroy(): void {
-    this.minusLifeSub.unsubscribe();
+    this.winLoseSub.unsubscribe();
   }
 
 }

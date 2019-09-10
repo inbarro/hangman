@@ -1,9 +1,24 @@
-<br>
-<div>
-<app-guessedLetters></app-guessedLetters>
-<br>
-<hr>
-<br>
-<app-lettersList></app-lettersList>
+<div class="container ">
+    <div class="jumbotron" [ngStyle] = "{'border':'solid'}">
+      <img [src] ="hangmanlogoImgSource" style="max-width:100%;"/>
+      <div class="row">
+      <div class="col-sm-3">
+        <app-hangmanImage ></app-hangmanImage>
+      </div>
+      <div class="col-sm-6" [attr.disabled] = "gameStateService.winOrLose != 'stillPlaying'">
+        <div class="row">
+        <app-guessedLetters> </app-guessedLetters>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+        <app-lettersList> </app-lettersList>
+      </div>
+      </div>
+      <div class="col-sm-3">
+        <app-win-lose-state> </app-win-lose-state>
+      </div>
+    </div>
+    </div>
 </div>
-<app-hangmanImage></app-hangmanImage>
+
