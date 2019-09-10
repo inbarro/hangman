@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { lettersService } from '../letters.service';
 import { gameStateService } from '../gameState.service';
+import movies  from '../../assets/movies.json';
+
 
 
 
@@ -30,11 +32,15 @@ export class BoardComponent implements OnInit {
 
     // this.imageStateService.initImageStateService()
     // this.winLoseService.initwinLoseService()
-  }
+  }    // console.log(movies[0]);
 
-  randomSentence(){    //TODO
-    let movie = "SHIN CHEN";
-    return movie.split("");
+
+  randomSentence(){
+    let movie = movies[Math.floor(Math.random() * movies.length)].title;
+    // let movie = "SHIN CHEN";
+    let toreturn  = movie.toUpperCase().split("");
+    console.log(toreturn);
+    return toreturn;
   }
 
 }

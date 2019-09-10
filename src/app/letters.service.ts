@@ -1,6 +1,7 @@
 import {Injectable, OnInit} from "@angular/core";
 import {letterDownModel} from "./letterDown.model";
 import {letterUpModel} from "./letterUp.model";
+import {distinct} from "rxjs/operators";
 
 
 @Injectable()
@@ -46,12 +47,26 @@ export class lettersService implements OnInit {
         this.lettersDown.push(new letterDownModel("G", alphabet[i]))
       }
     }
-    console.log("lettersDown: ");
-    console.log(this.lettersDown);
   }
 
-  choose25percent(){ //TODO
-    return ["S", "H"];
+  choose25percent(){
+    let persentLettersArr = [];
+
+    let lettersSet = new Set(this.movieArr);
+    let array = Array.from(lettersSet);
+    //
+    // for (let entry of lettersSet) {
+    //   console.log(entry);
+    // }
+    let counter = 0;
+    while (counter <(lettersSet.size)*0.25){
+        let randomLetter = array[Math.floor(Math.random() * array.length)];
+        if (!(persentLettersArr.includes(randomLetter))){
+          persentLettersArr[counter] = randomLetter;
+          counter++;
+        }
+    }
+    return persentLettersArr;
   }
 
   getRundom() {
