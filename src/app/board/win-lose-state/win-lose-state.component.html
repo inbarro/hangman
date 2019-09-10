@@ -1,8 +1,16 @@
 <div class = "container" [ngStyle] = "{'margin-top':'95%'}">
-  <img *ngIf = "winOrLose==='win'" [src] = "winImgSrc" [ngStyle] = "{'max-width': '100%'}"/>
+  <img *ngIf = "winOrLose==='win'" [src] = "loseGif" [ngStyle] = "{'max-width': '100%'}"/>
+  <h3 *ngIf = "winOrLose==='win'" [ngStyle] = "{'color' : 'green'}">you won!</h3>
+  <img *ngIf = "winOrLose==='win'"[src] = "winImgSrc" [ngStyle] = "{'max-width': '100%'}" >
 </div>
+
 <div class = "row"  [ngStyle] = "{'margin':'20%', 'padding-down':'50%'}">
-<img *ngIf = "winOrLose==='lose'" [src] = "loseImgSrc" [ngStyle] =  "{'max-width': '150%'}"/>
+  <img *ngIf = "winOrLose==='lose'" [src] = "winGif" [ngStyle] = "{'max-width': '100%'}"/>
+
+  <h3 *ngIf = "winOrLose==='lose'" [ngStyle] = "{'color' : 'red'}">you lost!</h3>
+
+  <img *ngIf = "winOrLose==='lose'" [src] = "loseImgSrc" [ngStyle] =  "{'max-width': '100%'}"/>
+
 </div>
 <br>
 <br>

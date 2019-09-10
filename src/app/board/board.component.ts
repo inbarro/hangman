@@ -27,7 +27,7 @@ export class BoardComponent implements OnInit {
   }
   //
   initBoard(){
-    this.currentMovie = this.randomSentence();//TODO uper case
+    this.currentMovie = this.randomSentence();
     this.letterService.initLetterService(this.currentMovie);
 
     // this.imageStateService.initImageStateService()
@@ -39,7 +39,6 @@ export class BoardComponent implements OnInit {
     let movie = movies[Math.floor(Math.random() * movies.length)].title;
     // let movie = "SHIN CHEN";
     let toreturn  = movie.toUpperCase().split("");
-    console.log(toreturn);
     return toreturn;
   }
 

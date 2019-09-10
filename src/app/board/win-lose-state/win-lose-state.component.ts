@@ -12,6 +12,8 @@ export class WinLoseStateComponent implements OnInit, OnDestroy {
   private winOrLose;
   private winImgSrc;
   private loseImgSrc;
+  private winGif;
+  private loseGif;
   private winLoseSub:Subscription;
 
 
@@ -19,6 +21,9 @@ export class WinLoseStateComponent implements OnInit, OnDestroy {
     this.winOrLose = "stillPlaying";
     this.winImgSrc = "./assets/winLose/yes_symbol.png";
     this.loseImgSrc = "./assets/winLose/shit_symbol.png";
+    this.winGif = "./assets/winLose/giphyLose.gif";
+    this.loseGif = "./assets/winLose/giphyWin.gif";
+
   }
 
   ngOnInit() {

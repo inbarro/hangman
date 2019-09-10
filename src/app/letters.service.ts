@@ -19,7 +19,7 @@ export class lettersService implements OnInit {
 
   initLetterService(movieSentence: string[]) {
     this.movieArr = movieSentence;
-    this.lettersUp = new Array<letterUpModel>();
+    this.lettersUp = Array<letterUpModel>();
     this.lettersDown = new Array<letterDownModel>();
     let chosenLetters = this.choose25percent();
     this.initUpletters(chosenLetters);
@@ -27,6 +27,7 @@ export class lettersService implements OnInit {
   }
 
   initUpletters(chosenLetters: string[]) {
+    // let allwordsarray = this.movieArr.
     for (let letter of this.movieArr) {
       if (letter === " ") {
         this.lettersUp.push(new letterUpModel("space", letter))
