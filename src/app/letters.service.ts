@@ -61,11 +61,11 @@ export class lettersService implements OnInit {
     // }
     let counter = 0;
     while (counter <(lettersSet.size)*0.25){
-        let randomLetter = array[Math.floor(Math.random() * array.length)];
-        if (!(persentLettersArr.includes(randomLetter))){
-          persentLettersArr[counter] = randomLetter;
-          counter++;
-        }
+      let randomLetter = array[Math.floor(Math.random() * array.length)];
+      if (!(persentLettersArr.includes(randomLetter))){
+        persentLettersArr[counter] = randomLetter;
+        counter++;
+      }
     }
     return persentLettersArr;
   }

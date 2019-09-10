@@ -37,8 +37,8 @@ export class BoardComponent implements OnInit {
 
   randomSentence(){
     let movie = movies[Math.floor(Math.random() * movies.length)].title;
-    // let movie = "SHIN CHEN";
     let toreturn  = movie.toUpperCase().split("");
+    console.log(toreturn);
     return toreturn;
   }
 

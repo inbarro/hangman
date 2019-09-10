@@ -1,8 +1,22 @@
 
-<div class="row">
-  <app-guessedLettersItem class = "col-1 " [ngStyle] = "{'margin': '1%'}"
+<div class="row" [ngStyle] = "{'border': 'solid'}">
+  <app-guessedLettersItem class = "col-1" [ngStyle] = "{'margin': '1%'}"
                        *ngFor="let letter of lettersUp"
                        [letterItem]="letter">
 
   </app-guessedLettersItem>
 </div>
+
+
+
+  <!--<div class="row"  *ngFor="let wordArray of allWordsArray" >-->
+
+    <!--<app-guessedLettersItem class="row"-->
+  <!--[ngStyle] = "{'margin': '1%'}"-->
+<!--*ngFor="let letter of wordArray"-->
+<!--[letterItem]="letter">-->
+
+<!--</app-guessedLettersItem>-->
+<!--</div>-->
+
+

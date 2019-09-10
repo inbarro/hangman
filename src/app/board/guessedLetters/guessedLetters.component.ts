@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { lettersService } from '../../letters.service'
 import {letterUpModel} from "../../letterUp.model";
-import {gameStateService} from "../../gameState.service";
 
 
 @Component({
@@ -12,22 +11,28 @@ import {gameStateService} from "../../gameState.service";
 export class GuessedLettersComponent implements OnInit {
 
   lettersUp: letterUpModel[];
-  allWordsArray: Array<letterUpModel[]>;
+  allWordsArray: Array<Array<letterUpModel>>;
+  currArray: Array<letterUpModel>
 
-
-  constructor(private lettersService: lettersService, private gameStateService:gameStateService) {
+  constructor(private lettersService: lettersService) {
   }
 
   ngOnInit() {
+    this.allWordsArray = new Array<Array<letterUpModel>>();
     this.lettersUp = this.lettersService.lettersUp;
-    this.gameStateService.resetSubject.subscribe((state :string ) => {
-      this.ngOnInit();
-    })
-    // this.initAllWordsArray();
+    this.initAllWordsArray();
   }
 
-  // initAllWordsArray() {
-  //   let currArr = letterUpModel[];
-  // }
+  initAllWordsArray() {
+    this.currArray = new Array<letterUpModel>();
+    for (let letter of this.lettersUp) {
+      if (letter.getType() != 'space') {
+        this.currArray.push(letter);
+      } else {
+        this.allWordsArray.push(this.currArray);
+        let currArray = new Array<letterUpModel>();
+      }
+    }
+    }
 }
 
