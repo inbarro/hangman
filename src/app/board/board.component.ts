@@ -18,12 +18,13 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.initBoard();
+    this.gameStateService.resetSubject.subscribe((state :string ) => {
+      this.initBoard();
+    })
   }
   //
   initBoard(){
-
     this.currentMovie = this.randomSentence();//TODO uper case
     this.letterService.initLetterService(this.currentMovie);
 

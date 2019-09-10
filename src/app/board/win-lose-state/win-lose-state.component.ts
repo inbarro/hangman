@@ -10,9 +10,10 @@ import { gameStateService } from '../../gameState.service';
 export class WinLoseStateComponent implements OnInit, OnDestroy {
 
   private winOrLose;
-  private winLoseSub:Subscription;
   private winImgSrc;
   private loseImgSrc;
+  private winLoseSub:Subscription;
+
 
   constructor(private gameStateService:gameStateService) {
     this.winOrLose = "stillPlaying";
@@ -21,13 +22,16 @@ export class WinLoseStateComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.winOrLose = "stillPlaying";
     this.winLoseSub =  this.gameStateService.winLoseSubject.subscribe((state :string ) => {
       this.winOrLose = state;
+    })
+    this.gameStateService.resetSubject.subscribe((state :string ) => {
+      this.ngOnInit();
     })
   }
 
   ngOnDestroy(): void {
     this.winLoseSub.unsubscribe();
   }
-
 }

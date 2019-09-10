@@ -18,6 +18,9 @@ export class LettersListComponent implements OnInit {
 
   ngOnInit() {
     this.lettersDown = this.lettersService.lettersDown;
+    this.gameStateService.resetSubject.subscribe((state :string ) => {
+      this.ngOnInit();
+    })
   }
 
 }

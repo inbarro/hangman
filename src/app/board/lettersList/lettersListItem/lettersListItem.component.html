@@ -4,7 +4,7 @@
     <!--<a class="list-group-item-text">{{ lettersListItem.data }}</a>-->
 <!--</div>-->
         <img (click) = "gameStateService.checkLetter(letterItem)"
-         [ngStyle] = "{'max-width':'100%', 'margin': 'auto'}"
+         [ngStyle] = "{'max-width':'100%', 'margin': 'auto', 'padding': '5%'}"
           [src]="letterItem.getImage()"
           class="img-responsive"
           style="max-height: 50px;"/>

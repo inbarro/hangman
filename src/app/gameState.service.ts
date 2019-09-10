@@ -11,6 +11,8 @@ export class gameStateService implements OnInit {
   winOrLose: string;
   minusLife = new Subject<number>();
   winLoseSubject = new Subject<string>();
+  resetSubject = new Subject<string>();
+
 
   constructor(private lettersService:lettersService) {
     this.lives = 6;
@@ -63,4 +65,9 @@ export class gameStateService implements OnInit {
     return true;
   }
 
+  playAgain(){
+    this.lives = 6;
+    this.winOrLose = "stillPlaying";
+    this.resetSubject.next();
+  }
 }
