@@ -1,8 +1,9 @@
 
 wolcome to Inbar's Hangnam game! hope you enjoy it :)
 
+![alt text](https://raw.githubusercontent.com/inbarro/hangman/tree/master/src/assets/sample.png)
 
-# Hangman
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
