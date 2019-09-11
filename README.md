@@ -1,7 +1,8 @@
+## hangman
 
 wolcome to Inbar's Hangnam game! hope you enjoy it :)
 
-![alt text](https://raw.githubusercontent.com/inbarro/hangman/tree/master/src/assets/sample.png)
+![](./src/assets/sample.png)
 
 
 
