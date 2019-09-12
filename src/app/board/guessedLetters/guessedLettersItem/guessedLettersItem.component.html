@@ -2,7 +2,7 @@
 <div
   class = "row"
   style="font-size: 4vw"
-  [ngStyle]="{'color': letterItem.getColor()}"
+  [ngStyle]="{'color': letterItem.getColor(), , 'max-width':'100%'}"
   >
     {{ letterItem.getLetter()}}
   <span *ngIf = "letterItem.getType()==='space'"> space </span>
